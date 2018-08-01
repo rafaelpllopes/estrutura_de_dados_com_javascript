@@ -1,6 +1,6 @@
 class ListaLigada {
     constructor() {
-        this._lenght = 0;
+        this._length = 0;
         this._head = null;
     }
 
@@ -17,11 +17,11 @@ class ListaLigada {
             }
             atual.proximo = noh;
         }
-        this._lenght++;
+        this._length++;
     }
 
     removeAt(posicao) {
-        if(posicao > -1 && posicao < this._lenght) {
+        if(posicao > -1 && posicao < this._length) {
             let atual = this._head;
             let anterior;
             let index = 0;
@@ -37,7 +37,7 @@ class ListaLigada {
                 anterior.proximo = atual.proximo;
             }
 
-            this._lenght--;
+            this._length--;
 
             return atual.elemento;
         } else {
@@ -46,7 +46,7 @@ class ListaLigada {
     }
 
     insert(posicao, elemento) {
-        if(posicao >= 0 && posicao <= this._lenght){
+        if(posicao >= 0 && posicao <= this._length){
             let noh = new Noh(elemento);
             let atual = this._head;
             let anterior;
@@ -63,7 +63,7 @@ class ListaLigada {
                 noh.proximo = atual;
                 anterior.proximo = noh;
             }
-            this._lenght++;
+            this._length++;
             return true;
         } else {
             return false;
@@ -103,11 +103,11 @@ class ListaLigada {
     }
 
     isEmpty() {
-        return this._lenght === 0;
+        return this._length === 0;
     }
 
     size() {
-        return this._lenght;
+        return this._length;
     }
 
     get head() {
